@@ -9,6 +9,7 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
     line-height: 1.6;
+    background-color: #fff; /* Default light background */
   }
   
   /* Navbar */
@@ -47,6 +48,21 @@
   
   .nav-links li a:hover {
     color: #007acc;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    cursor: pointer;
+    border: none;
+    background: #007acc;
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.3rem;
+    transition: background 0.3s ease;
+  }
+  
+  .dark-mode-toggle:hover {
+    background: #005fa3;
   }
   
   /* Hero Section */
@@ -196,5 +212,76 @@
   .site-footer p {
     color: #666;
     font-size: 0.9rem;
+  }
+  
+  /* ===================================== 
+     Dark Mode Override Styles
+     ===================================== */
+  .dark-mode {
+    background-color: #1e1e1e; /* Overall page background when dark */
+    color: #f0f0f0;
+  }
+  
+  /* Navbar in Dark Mode */
+  .dark-mode .site-header {
+    background: #2c2c2c;
+    border-bottom-color: #444;
+  }
+  
+  .dark-mode .site-title a {
+    color: #f0f0f0;
+  }
+  
+  .dark-mode .nav-links li a {
+    color: #f0f0f0;
+  }
+  
+  .dark-mode .nav-links li a:hover {
+    color: #66cfff;
+  }
+  
+  /* Dark Mode Toggle Button in Dark Mode */
+  .dark-mode .dark-mode-toggle {
+    background: #444;
+    color: #f0f0f0;
+  }
+  
+  /* Hero Section in Dark Mode */
+  .dark-mode .hero {
+    background: #333;
+  }
+  
+  /* Buttons in Dark Mode */
+  .dark-mode .btn {
+    background: #444;
+    color: #fff;
+  }
+  
+  .dark-mode .btn:hover {
+    background: #666;
+  }
+  
+  /* Projects Card in Dark Mode */
+  .dark-mode .project-card {
+    background: #2c2c2c;
+    border-color: #444;
+  }
+  
+  .dark-mode .project-link {
+    color: #66cfff;
+  }
+  
+  .dark-mode .project-link:hover {
+    color: #33bbff;
+  }
+  
+  /* Footer in Dark Mode */
+  .dark-mode .site-footer {
+    background: #2c2c2c;
+    border-top-color: #444;
+  }
+  
+  .dark-mode .site-footer p {
+    color: #ccc;
   }
   

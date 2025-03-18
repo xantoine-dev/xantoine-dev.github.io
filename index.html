@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="My Professional GitHub Page" />
+  <meta name="description" content="Xavier Antoine-Goeas" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>Software Craftsman</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- ======= Header Section ======= -->
   <header class="site-header">
     <nav class="navbar">
-      <h1 class="site-title"><a href="#">My GitHub Page</a></h1>
+      <h1 class="site-title"><a href="#">Xavier Antoine-Goeas</a></h1>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- Dark Mode Toggle Button -->
+      <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
     </nav>
   </header>
   
@@ -24,8 +26,10 @@
   <section class="hero">
     <div class="hero-content">
       <h2>Welcome!</h2>
-      <p>I'm a software developer passionate about building efficient, scalable applications.</p>
-      <a class="btn" href="#projects">See My Work</a>
+      <p>I have 20 years of experience designing, building and shipping digital products.</p>
+      <!-- 
+        <a class="btn" href="#projects">See My Work</a>
+      -->
     </div>
   </section>
 
@@ -39,40 +43,40 @@
     </p>
   </section>
 
-  <!-- ======= Projects Section ======= -->
-  <section id="projects" class="projects-section">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h3>Project One</h3>
-        <p>
-          A brief description of your project. Explain what technology you used 
-          and what problem it solves.
-        </p>
-        <a href="#" class="project-link" target="_blank" rel="noopener">
-          View Project
-        </a>
+  <!-- 
+    ======= Projects Section (Commented Out) =======
+
+    <section id="projects" class="projects-section">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project One</h3>
+          <p>
+            A brief description of your project. Explain what technology you used 
+            and what problem it solves.
+          </p>
+          <a href="#" class="project-link" target="_blank" rel="noopener">
+            View Project
+          </a>
+        </div>
+        <div class="project-card">
+          <h3>Project Two</h3>
+          <p>
+            A short blurb about your project. Focus on features, what you learned, and challenges.
+          </p>
+          <a href="#" class="project-link" target="_blank" rel="noopener">
+            View Project
+          </a>
+        </div>
       </div>
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>
-          A short blurb about your project. Focus on features, what you learned, and challenges.
-        </p>
-        <a href="#" class="project-link" target="_blank" rel="noopener">
-          View Project
-        </a>
-      </div>
-      <!-- Add more project cards as needed -->
-    </div>
-  </section>
+    </section>
+  -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact-section">
     <h2>Contact</h2>
     <p>
-      Interested in collaborating or have a question? Feel free to reach out!
+      Work with me.
     </p>
     <ul>
       <li>Email: <a href="mailto:xavierantoine@protonmail.com">xavierantoine@protonmail.com</a></li>
@@ -82,7 +86,42 @@
 
   <!-- ======= Footer Section ======= -->
   <footer class="site-footer">
-    <p>&copy; 2025 Xavier. All Rights Reserved.</p>
+    <p>&copy; 2025 Xavier Antoine-Goeas. All Rights Reserved.</p>
   </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const toggleBtn = document.querySelector('.dark-mode-toggle');
+    
+    // 1. Check if we have a saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      // If user previously saved a preference, use that
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleBtn.textContent = 'Light Mode';
+      }
+    } else {
+      // 2. No saved preference; match system preference
+      const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (userPrefersDark) {
+        document.body.classList.add('dark-mode');
+        toggleBtn.textContent = 'Light Mode';
+      }
+    }
+
+    // 3. Toggle button event listener
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = 'Light Mode';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = 'Dark Mode';
+      }
+    });
+  </script>
 </body>
 </html>
